@@ -1,0 +1,6 @@
+{  "reputer": "name", 
+   "reputee": "nr1",   
+   "repute":  
+           {    "rid" : "rid2",
+                "feature": "reach", 
+                "value": 5 }}
