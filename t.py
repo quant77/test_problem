@@ -47,15 +47,16 @@ class ThingsResource(object):
     def __init__(self, db):
         self.db = db
         
-    def on_get(self, req, resp):
+    def on_get(self, req, resp, reputee):
     
-        try:
+        '''        
+	try:
             doc = json.loads(req.stream.read())
 
         except KeyError:
             raise falcon.HTTPBadRequest('Missing thing','A thing must be submitted in the request body.')
-         
-        name_of_reputee = doc["reputee"] # get reputee name
+        '''         
+        name_of_reputee = reputee # get reputee name
         reputes_r= reputes_type(self.db, 'reach', name_of_reputee)
         reputes_c= reputes_type(self.db,'clarity', name_of_reputee)
         values_r , x_r = values_for_rid(reputes_r); values_c, x_c = values_for_rid( reputes_c)
@@ -96,7 +97,10 @@ class ThingsResource(object):
 app = falcon.API()
 db = StorageEngine()
 things = ThingsResource(db)
-app.add_route('/things', things)
+
+app.add_route('/reputee/', things)
+app.add_route('/reputee/{reputee}', things)
+
 #app.add_error_handler(StorageError, StorageError.handle)
 #app.add_sink(sink, r'/search/(?P<engine>ddg|y)\Z')
 
