@@ -1,14 +1,14 @@
-How to setup the environment and run an app:
-$ mkdir folder
-$ cd folder
-$ virtualenv .venv
-$ source .venv/bin/activate
-$ pip3 install falcon
-Open new terminal and do:
-$ source .venv/bin/activate
-$ pip3 install gunicorn
-copy a file t.py into the directory and run
-$ gunicorn t:app
-then open a new terminal tab and run a following command for posting a json:
-$curl -X POST -d @your_file.json http://localhost:8000/things
+How to setup the environment and run an app: <br />
+$ mkdir folder <br />
+$ cd folder <br />
+$ virtualenv .venv <br />
+$ source .venv/bin/activate <br />
+$ pip3 install falcon   <br />
+Open new terminal and do: <br />
+$ source .venv/bin/activate <br />
+$ pip3 install gunicorn <br />
+copy a file t.py into the directory and run <br />
+$ gunicorn t:app <br />
+then open a new terminal tab and run a following command for posting a json: <br />
+$curl -X POST -d @your_file.json http://localhost:8000/things <br />
 $
