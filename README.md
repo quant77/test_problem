@@ -11,4 +11,4 @@ copy a file t.py into the directory and run <br />
 $ gunicorn t:app <br />
 then open a new terminal tab and run a following command for posting a json: <br />
 $curl -X POST -d @your_file.json http://localhost:8000/things <br />
-$curl
+then for GET: <br />
