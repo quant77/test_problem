@@ -10,6 +10,6 @@ $ pip3 install gunicorn <br />
 copy a file t.py into the directory and run <br />
 $ gunicorn t:app <br />
 then open a new terminal tab and run a following command for posting a json: <br />
-$curl -X POST -d @your_file.json http://localhost:8000/things <br />
+$curl -X POST -d @your_file.json http://localhost:8000/reputee <br />
 then for GET in the same tab: <br />
 $ http GET  http://localhost:8000/reputee/nr1
