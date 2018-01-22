@@ -18,8 +18,11 @@ class StorageEngine(object):
 def reputes_type(db, rtype, nr):
     '''
     for a given name_of_reputee(nr), return reputes of particular type(rtype) = reach or clarity
-    ''' 
-    return [i for i in db.store.values() if i['reputee'] == nr and i["repute"]['feature'] ==rtype]
+    '''
+    names_reputees =  [i['reputee'] for i in db.store.values()]
+    if nr not in  names_reputees: raise ValueError('name of reputee cannot be found')
+    
+    else: return [i for i in db.store.values() if i['reputee'] == nr and i["repute"]['feature'] ==rtype]
 
 def values_for_rid(reputes):
     '''
